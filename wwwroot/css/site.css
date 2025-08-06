@@ -1,0 +1,40 @@
+/* Style each task box */
+.task-box {
+  background-color: #fffae6;
+  border: 2px dashed #ffa500;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 18px;
+  color: #d2691e;
+  box-shadow: 2px 4px 6px rgba(255, 165, 0, 0.3);
+}
+
+/* Style for completed tasks */
+.task-box.completed {
+  text-decoration: line-through;
+  color: #a0522d;
+  opacity: 0.7;
+}
+
+/* Container for the buttons under the task text */
+.task-actions {
+  margin-top: 10px;
+}
+
+/* Style toggle and delete links/buttons */
+.task-actions a {
+  margin-right: 15px;
+  color: #ff4500;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.task-actions a:hover {
+  color: #ffa500;
+  text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+var builder = WebApplication.CreateBuilder(args);
+
+// Add MVC services
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+// Set ToDo/Index as default route
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=ToDo}/{action=Index}/{id?}");
+
+app.Run();

@@ -1,0 +1,26 @@
+@model List<TodoListApp.Models.ToDoItem>
+
+<h1>To-Do List</h1>
+
+<form asp-action="Create" method="post">
+    <input type="text" name="title" placeholder="Add a new task" required />
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+    @foreach(var item in Model)
+    {
+        <li>
+            @if(item.IsCompleted)
+            {
+                <del>@item.Title</del>
+            }
+            else
+            {
+                @item.Title
+            }
+            <a asp-action="ToggleComplete" asp-route-id="@item.Id">[Toggle]</a>
+            <a asp-action="Delete" asp-route-id="@item.Id" style="color:#ff0000;">[Delete]</a>
+        </li>
+    }
+</ul>
